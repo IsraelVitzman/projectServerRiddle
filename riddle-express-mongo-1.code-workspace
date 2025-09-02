@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "riddle-express-mongo-1",
+			"path": "../../riddle-express-mongo-1"
+		},
+		{
+			"name": "backendRiddle",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
