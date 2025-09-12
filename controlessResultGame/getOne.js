@@ -2,12 +2,12 @@ import { supabase } from "../connectToDB/creatConnectSupaBase.js";
 
 export async function GetBestGameResultByUserName(req, res) {
     try {
-        const name = req.params.password;
+        const name = req.params.name;
         console.log(name, "name");
         const { data, error } = await supabase
             .from('resultRiddles')
             .select('*')
-            .eq('password', password);
+            .eq('name', name);
         if (error) {
             throw error;
         }
