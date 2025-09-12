@@ -8,12 +8,12 @@ const router = express.Router();
 
 export function RouterResultGame() {
 
-    router.post('/dataPlayer', (req, res) => {
+    router.post('/addresultgame', (req, res) => {
         InsertGameResult(req, res)
     });
 
 
-    router.get('/resultBestPlayer/:name', (req, res) => {
+    router.get('/resultBestPlayer/:password', (req, res) => {
         GetBestGameResultByUserName(req, res)
 
     });

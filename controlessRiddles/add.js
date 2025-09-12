@@ -2,14 +2,12 @@ import { CreateConection } from '../connectToDB/creatConnectMDB.js'
 export async function Add(req, res) {
     let clientClose;
     try {
-
         const body = req.body;
         console.log("add riddle");
         
         const { client, collection } = await CreateConection('riddles');
 
         clientClose = client
-
 
         await collection.insertOne(body);
 
@@ -21,7 +19,9 @@ export async function Add(req, res) {
         res.status(500).json({message:err.message});
 
     } finally {
-        await clientClose.close();
+        if(clientClose){
+            await clientClose.close();
+        }
 
     }
 }

@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
-
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
+ 
 export async function CreateConection(table) {
 
     dotenv.config();
@@ -12,7 +12,7 @@ export async function CreateConection(table) {
 
         await client.connect();
 
-        const db = client.db('DBGameRiddles');
+        const db = client.db('playRiddles');
 
         const collection = db.collection(table);
 

@@ -10,7 +10,8 @@ export async function Update(req, res) {
         const id = req.params.id
 
         const body = req.body
-
+         console.log(body);
+         
         const { client, collection } = await CreateConection('riddles')
 
         clientClose = client
