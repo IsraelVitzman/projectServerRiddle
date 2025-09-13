@@ -4,7 +4,7 @@ export async function Add(req, res) {
     try {
         const body = req.body;
         console.log("add riddle");
-        
+
         const { client, collection } = await CreateConection('riddles');
 
         clientClose = client

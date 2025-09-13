@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 
 
-const SECRET = process.env.SECRET;
+const SECRET = 'your_jwt_secret_key';
 export function SignToken(name, role) {
     return jwt.sign(
         {
@@ -13,22 +13,26 @@ export function SignToken(name, role) {
     );
 }
 
-export function VerifyToken(role) {
-    return (req, res, next)=> {
-        const token = req.headers['authorization'].split(' ')[1];;
-        if (!token) {
+export  function VerifyToken(role) {
+    return async(req, res, next) => {
+        const token = await req.headers['authorization'];
+        
+        console.log("in token" ,token);
+        
+        if (token==="null") {
             console.log("you have not tokn");
-            res.json({ message: "you have not tokn" });
-            return;
+            return  res.json({ message: "you have not tokn" });
+           
         }
-
+       
         jwt.verify(token, SECRET, (err, decoded) => {
+            console.log(decoded,"decoded");
             if (err) {
                 console.log(err);
                 res.json({ message: err });
                 return
             }
-            console.log(decoded.role);
+            console.log(decoded.role,"decoded.role");
             if (role === "admin") {
                 if (decoded.role !== 'admin') {
                     console.log("no accses is no admin");
@@ -46,6 +50,7 @@ export function VerifyToken(role) {
             next();
         });
     }
-
 }
+
+
 
