@@ -14,7 +14,7 @@ export async function Delete(req, res) {
 
         await collection.deleteOne({ id: id });
 
-        res.status(200).json({message:"Delete successfully"});
+        res.status(200).json({message:"נמחק בהצלחה"});
 
     } catch (err) {
         console.error('invalid eroor /delete/:', err);

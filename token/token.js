@@ -21,7 +21,7 @@ export  function VerifyToken(role) {
         
         if (token==="null") {
             console.log("you have not tokn");
-            return  res.json({ message: "you have not tokn" });
+            return  res.json({ message: "אינך רשום באתר" });
            
         }
        

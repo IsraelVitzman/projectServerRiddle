@@ -21,7 +21,7 @@ export async function Update(req, res) {
             { $set: body }
         );
 
-        
+        res.status(500).json({message:"עודכן בהצלחה"});
 
         await client.close()
 

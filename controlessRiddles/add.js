@@ -11,7 +11,7 @@ export async function Add(req, res) {
 
         await collection.insertOne(body);
 
-        res.status(201).json({message:'insert successfully'});
+        res.status(201).json({message:'נוסף בהצלחה'});
 
     } catch (err) {
         console.error(' invalid eroor /add/:', err);
