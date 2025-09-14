@@ -25,7 +25,7 @@ export async function LoginPlayer(req, res) {
         const token = SignToken(name, role)
         console.log(`login successful: ${name} (${role})`);
         console.log(`token sent in token: ${token.substring(0, 20)}...`);
-        res.status(200).json({ "token": token, message: `welcome${name}` })
+        res.status(200).json({ "token": token, "name": name,"role":role})
 
 
     } catch (err) {

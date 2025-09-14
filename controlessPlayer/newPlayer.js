@@ -21,7 +21,7 @@ export async function NewPlayer(req, res) {
         console.log(`login successful: ${name} (${role})`);
         console.log(`token sent in token: ${token.substring(0, 20)}...`);
 
-        res.status(200).json({ "token":token, message: `welcome new user ${name}` })
+        res.status(200).json({ "token":token, "name": name ,"role":role})
 
     } catch (err) {
         console.log('invalid  error', err);
