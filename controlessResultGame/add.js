@@ -1,11 +1,11 @@
 import {supabase} from "../connectToDB/creatConnectSupaBase.js";
 export async function InsertGameResult(req, res) {
   try {
-    const { name, avergeTime, allTime } = req.body;
-    console.log("Insert Game Result", name, avergeTime, allTime);
+    const { name, allTime } = req.body;
+    console.log("Insert Game Result", name, allTime);
     const { data, error } = await supabase
       .from('resultRiddles')
-      .insert([{ name, avergeTime, allTime }]); 
+      .insert([{ name, allTime }]); 
     if (error) throw error;
     res.status(201).json({ message: "Game results inserted successfully"});
   } catch (err) {

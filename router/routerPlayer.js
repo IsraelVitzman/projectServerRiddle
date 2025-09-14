@@ -11,7 +11,6 @@ export function RouterPlayer() {
         NewPlayer(req, res)
     });
 
-
     return router
 
 }

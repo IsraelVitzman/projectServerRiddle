@@ -20,7 +20,6 @@ export async function Update(req, res) {
             { id: id },
             { $set: body }
         );
-
         res.status(500).json({message:"עודכן בהצלחה"});
 
         await client.close()
