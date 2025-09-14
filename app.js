@@ -6,7 +6,7 @@ import { RouterResultGame } from "./router/routerResultGame.js";
 import cors from 'cors'
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 const server = express()
 
 server.use(cors())
@@ -17,6 +17,6 @@ server.use('/riddles', RouterRiddles())
 server.use('/player', RouterPlayer())
 server.use('/resultgame', RouterResultGame())
 
-server.listen(PORT, () => {
+server.listen(PORT,'0.0.0.0', () => {
     console.log(`Server is listening on port ${PORT}...`);
 });

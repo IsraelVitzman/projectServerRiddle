@@ -1,4 +1,4 @@
-import 'dotenv/config'; // טוען את משתני הסביבה
+import 'dotenv/config'; 
 import { createClient } from '@supabase/supabase-js'
 import dotenv from 'dotenv';
 dotenv.config();
